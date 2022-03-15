@@ -1,7 +1,12 @@
 import './App.scss';
+import ExpenseTrackerApp from './components/expenseTrackerApp/expenseTrackerApp';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ExpenseTrackerApp />
+    </>
+  );
 }
 
 export default App;
