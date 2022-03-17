@@ -1,0 +1,21 @@
+.info {
+  display: flex;
+  & > div {
+    padding: 1rem;
+  }
+}
+
+.balance {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.formAndBtn {
+  display: flex;
+  justify-content: center;
+  .btn {
+    width: 40%;
+    height: 30px;
+  }
+}
