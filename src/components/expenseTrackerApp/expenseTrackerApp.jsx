@@ -10,10 +10,24 @@ const ExpenseTrackerApp = () => {
     balance: 0,
     transactions: [],
   });
-  
+
+  const submitHandler = (formInfo) => {
+    const transactionsInfoClone = { ...transactionsInfo };
+    transactionsInfoClone.transactions.push(formInfo);
+    console.log(formInfo.type);
+    transactionsInfoClone[formInfo.type] += +formInfo.amount;
+    transactionsInfoClone.balance =
+      transactionsInfoClone.income - transactionsInfoClone.outcome;
+
+    setTransactionsInfo(transactionsInfoClone);
+  };
+
   return (
     <div className={styles.expenseTrackerAppContainer}>
-      <TransactionOverView info={transactionsInfo} />
+      <TransactionOverView
+        info={transactionsInfo}
+        submitHandler={submitHandler}
+      />
       <TransactionList />
     </div>
   );
