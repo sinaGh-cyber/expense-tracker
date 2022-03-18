@@ -1,7 +1,7 @@
 import styles from './transactionList.module.scss';
 
 const TransactionList = () => {
-  return <></>;
+  return <div className={styles.listContainer}></div>;
 };
 
 export default TransactionList;
