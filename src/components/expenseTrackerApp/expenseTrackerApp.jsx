@@ -14,7 +14,6 @@ const ExpenseTrackerApp = () => {
   const submitHandler = (formInfo) => {
     const transactionsInfoClone = { ...transactionsInfo };
     transactionsInfoClone.transactions.push(formInfo);
-    console.log(formInfo.type);
     transactionsInfoClone[formInfo.type] += +formInfo.amount;
     transactionsInfoClone.balance =
       transactionsInfoClone.income - transactionsInfoClone.outcome;
