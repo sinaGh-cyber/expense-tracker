@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import styles from './transactionOverView.module.scss';
+import TransactionForm from '../transactionForm/transactionForm';
 
-const TransactionOverView = ({ info }) => {
+const TransactionOverView = ({ info, submitHandler }) => {
   const [isFormShowed, setIsFormShowed] = useState(false);
   const onBtnClick = (e) => {
     setIsFormShowed((prev) => !prev);
@@ -10,13 +11,12 @@ const TransactionOverView = ({ info }) => {
     <div className={styles.overviewContainer}>
       <div className={styles.balance}>
         <p>balance: {info.balance} $</p>
-      </div>
-      <div className={styles.formAndBtn}>
         <button onClick={onBtnClick} className={styles.btn}>
           {isFormShowed ? 'Cancel' : 'Add'}
         </button>
-
-        {isFormShowed && <div className="form">form</div> }
+      </div>
+      <div className={styles.formAndBtn}>
+        {isFormShowed && <TransactionForm income={info.income} outcome={info.outcome} submitHandler={submitHandler} />}
       </div>
 
       <div className={styles.info}>
