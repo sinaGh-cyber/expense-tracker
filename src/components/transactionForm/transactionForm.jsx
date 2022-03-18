@@ -12,7 +12,8 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
   const validate = () => {
     const formInfoClone = { ...formInfo };
     formInfoClone.error.titleIsValid = formInfo.data.title ? true : false;
-    formInfoClone.error.amountIsValid = formInfo.data.amount ? true : false;
+    formInfoClone.error.amountIsValid =
+      formInfo.data.amount && formInfo.data.amount !== '0' ? true : false;
     setFormInfo(formInfoClone);
   };
   const onChangeHandler = (e) => {
