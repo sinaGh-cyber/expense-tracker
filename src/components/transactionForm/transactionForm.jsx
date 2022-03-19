@@ -16,6 +16,20 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
       formInfo.data.amount && formInfo.data.amount !== '0' ? true : false;
     setFormInfo(formInfoClone);
   };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    validate();
+    if (formInfo.error.titleIsValid && formInfo.error.amountIsValid) {
+      const formInfoClone = { ...formInfo };
+      formInfoClone.data.id = new Date().getTime();
+
+      submitHandler(formInfoClone.data);
+      formInfoClone.data = { amount: 100, type: 'income', title: '' };
+      setFormInfo(formInfoClone);
+    }
+  };
+
   const onChangeHandler = (e) => {
     const formInfoClone = { ...formInfo };
     formInfoClone.data[e.target.name] = e.target.value;
@@ -26,16 +40,9 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
 
     setFormInfo(formInfoClone);
   };
+
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        validate();
-        if (formInfo.error.titleIsValid && formInfo.error.amountIsValid)
-          submitHandler(formInfo.data);
-      }}
-      className="FormTag"
-    >
+    <form onSubmit={onSubmitHandler} className={styles.FormTag}>
       <div className="TransactionTitle">
         <label htmlFor="title">title: </label>
         <input
@@ -59,7 +66,7 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
           id="amount"
         />
       </div>
-      <div className="radioBtnGroup">
+      <div className={styles.radioBtnGroup}>
         <div className="outcomeDiv">
           <label htmlFor="outcome">expense: </label>
           <input
@@ -84,7 +91,7 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
           />
         </div>
       </div>
-      <button type="submit">submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
