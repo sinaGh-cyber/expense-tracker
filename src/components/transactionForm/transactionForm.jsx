@@ -37,7 +37,7 @@ const TransactionForm = ({ submitHandler, income, outcome }) => {
       className="FormTag"
     >
       <div className="TransactionTitle">
-        <label htmlFor="title">transaction title:</label>
+        <label htmlFor="title">title: </label>
         <input
           className={!formInfo.error.titleIsValid ? `${styles.error}` : ''}
           value={formInfo.data.title}
