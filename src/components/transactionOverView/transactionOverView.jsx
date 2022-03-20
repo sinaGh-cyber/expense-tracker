@@ -10,21 +10,32 @@ const TransactionOverView = ({ info, submitHandler }) => {
   return (
     <div className={styles.overviewContainer}>
       <div className={styles.balance}>
-        <p>balance: {info.balance} $</p>
-        <button onClick={onBtnClick} className={styles.btn}>
+        <p>balance: {info.balance}$</p>
+        <button
+          onClick={onBtnClick}
+          className={`${styles.btn} ${
+            isFormShowed ? styles.cancel : styles.add
+          } `}
+        >
           {isFormShowed ? 'Cancel' : 'Add'}
         </button>
       </div>
       <div className={styles.formAndBtn}>
-        {isFormShowed && <TransactionForm income={info.income} outcome={info.outcome} submitHandler={submitHandler} />}
+        {isFormShowed && (
+          <TransactionForm
+            income={info.income}
+            outcome={info.outcome}
+            submitHandler={submitHandler}
+          />
+        )}
       </div>
 
       <div className={styles.info}>
-        <div className="income">
+        <div className={styles.income}>
           <p>income:</p>
           <p>{info.income} $</p>
         </div>
-        <div className="outcome">
+        <div className={styles.outcome}>
           <p>expense: </p>
           <p>{info.outcome} $</p>
         </div>
