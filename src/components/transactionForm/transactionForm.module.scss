@@ -1,4 +1,106 @@
-.error{
-    background-color: rgb(255, 219, 219);
-    border: solid 2px rgb(173, 31, 31);
+.FormTag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: antiquewhite;
+  width: 95%;
+  border-radius: 5px;
+  padding: 1rem;
+  border: solid 3px rgb(223, 158, 73);
+  margin: 5px 0;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: large;
+    font-weight: 500;
+    color: #684401;
+
+    .error {
+      background-color: rgb(252, 175, 175);
+      border: solid 3px rgb(173, 31, 31);
+    }
+
+    & > input {
+      height: 40px;
+      border-radius: 10px;
+      padding-left: 8px;
+      padding-right: 8px;
+      border: solid 3px #af8a44;
+      cursor: pointer;
+
+      &:focus {
+        outline-color: #ffa500;
+        cursor: text;
+      }
+    }
+    label {
+      margin-bottom: 10px;
+    }
+  }
+
+  .radioBtnGroup {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    input {
+      cursor: pointer;
+    }
+
+    input[type='radio']:after {
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      background-color: #d1d3d1;
+      content: '';
+      display: inline-block;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+
+    /*gives radio button orange fill when clicked*/
+    input[type='radio']:checked:after {
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      top: -2px;
+      left: -1px;
+      position: relative;
+      background-color: #ffa500;
+      content: '';
+      display: inline-block;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+  }
+
+  button {
+    align-self: center;
+    padding: 0.6rem 1.2rem;
+    background-color: rgb(255, 213, 159);
+    color: rgb(138, 78, 0);
+    font-weight: 600;
+    font-size: 15px;
+    border: solid 3px rgb(128, 72, 0);
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
 }
