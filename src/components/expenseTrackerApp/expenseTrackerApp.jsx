@@ -27,7 +27,7 @@ const ExpenseTrackerApp = () => {
         info={transactionsInfo}
         submitHandler={submitHandler}
       />
-      <TransactionList />
+      <TransactionList transactions={transactionsInfo.transactions} />
     </div>
   );
 };
