@@ -1,0 +1,42 @@
+.itemContainer {
+  border: solid 2px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0;
+  .infoContainer {
+    width: 66%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &.green {
+    background-color: rgb(130, 240, 130);
+    border-color: green;
+
+    p {
+      color: rgb(0, 88, 0);
+    }
+  }
+
+  &.red {
+    background-color: rgb(255, 151, 151);
+    border-color: red;
+
+    p {
+      color: rgb(116, 0, 0);
+    }
+  }
+
+  .checkBoxContainer {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+  }
+}
