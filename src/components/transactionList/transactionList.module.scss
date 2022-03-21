@@ -1,0 +1,68 @@
+.listContainer {
+  min-height: 100px;
+  background-color: rgb(255, 208, 146);
+  width: 350px;
+//   margin-top: 1px;
+//   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+  p {
+    font-size: large;
+    font-weight: 600;
+    color: rgb(117, 74, 17);
+    padding: 1rem;
+  }
+
+  .buttonGroup {
+    width: 95%;
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+    margin-top: 15px;
+
+    .delete,
+    .select {
+      border-radius: 5px;
+      padding: 0.3rem 0.5rem;
+      border: solid 2px;
+      font-size: medium;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+    .delete {
+      margin-right: 5px;
+      border-color: rgb(189, 0, 0);
+      background-color: rgb(255, 179, 179);
+      color: rgb(187, 0, 0);
+    }
+    .select {
+      margin-left: 5px;
+      border-color: rgb(66, 66, 66);
+      background-color: gainsboro;
+      color: rgb(90, 90, 90);
+    }
+  }
+
+  ul {
+      width: 95%;
+      border: solid 3px rgb(202, 147, 69);
+      border-radius: 5px;
+      background-color: antiquewhite;
+      padding: 0.5rem;
+      list-style: none;
+      margin: 10px 0;
+  }
+}
