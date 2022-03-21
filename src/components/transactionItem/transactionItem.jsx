@@ -15,12 +15,16 @@ const TransactionItem = ({ transaction, onSelect }) => {
       </div>
       <div className={styles.checkBoxContainer}>
         <input
+          id={`${transaction.id}input`}
           type="checkbox"
           checked={transaction.isSelected === true}
           onChange={() => {
             onSelect(transaction.id);
           }}
         />
+        <label htmlFor={`${transaction.id}input`}>
+          <span class={styles.customCheckbox}></span>
+        </label>
       </div>{' '}
     </li>
   );

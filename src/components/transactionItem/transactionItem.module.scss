@@ -33,10 +33,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    input {
-      width: 30px;
-      height: 30px;
-      margin: auto;
+    // input {
+    //   width: 30px;
+    //   height: 30px;
+    //   margin: auto;
+    // }
+
+    [type='checkbox'] {
+      opacity: 0;
+      position: absolute;
+      // margin: auto;
+    }
+
+    .customCheckbox {
+      min-width: 1.75em;
+      min-height: 1.75em;
+      margin: auto 0;
+      border: 2px solid rgb(255, 169, 57);
+      background-color: gainsboro;
+      box-shadow: inset 0 0 0 3px antiquewhite;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    [type='checkbox']:checked + label .customCheckbox {
+      border-color: rgb(255, 169, 57);
+      background: rgb(255, 179, 81);
+      box-shadow: inset 0 0 0 3px white;
     }
   }
 }
