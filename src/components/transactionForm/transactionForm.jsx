@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './transactionForm.module.scss';
-const TransactionForm = ({ submitHandler, income, outcome }) => {
+const TransactionForm = ({ submitHandler}) => {
   const [formInfo, setFormInfo] = useState({
     error: {
       titleIsValid: true,
